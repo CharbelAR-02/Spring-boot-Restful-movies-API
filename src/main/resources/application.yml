@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/movies
+    username: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "abouraadcharbel0@gmail.com"
+    password: "jvbi ehtl mhzp bktn"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+project:
+  poster: posters/
+
+base:
+  url: "http://localhost:8080"
+
+logging:
+  level:
+    root: info
+    com.movie.movieAPI: debug # Set this to debug to get detailed logs from your application packages
+  file:
+    name: logs/movie-api.log # Path to the log file
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n" # Log pattern for console output
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # Log pattern for file output
